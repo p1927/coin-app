@@ -1,0 +1,19 @@
+<div class="p-4 w-100 grid grid-cols-1 gap-4">
+  <div *ngFor="let rate of rates | keyvalue">
+    <mat-card
+      class="shadow-lg rounded-lg"
+      (click)="emitOnClick(rate)"
+      (keydown.enter)="emitOnClick(rate)"
+    >
+      <mat-card-header>
+        <mat-card-title>{{ rate.value.name }}</mat-card-title>
+        <mat-card-subtitle>{{ rate.key.toUpperCase() }}</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <p><strong>Type:</strong> {{ rate.value.type }}</p>
+        <p><strong>Unit:</strong> {{ rate.value.unit }}</p>
+        <p><strong>Value:</strong> {{ rate.value.value }}</p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

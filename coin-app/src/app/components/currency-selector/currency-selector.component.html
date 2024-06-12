@@ -1,0 +1,26 @@
+<mat-card
+  class="shadow-lg rounded-lg m-4 p-4"
+  *ngIf="selectedCurrency; else noSelection"
+>
+  <mat-card-header>
+    <div mat-card-avatar class="currency-avatar">
+      {{ selectedCurrency.key.toUpperCase() }}
+    </div>
+    <mat-card-title>{{ selectedCurrency.value.name }}</mat-card-title>
+  </mat-card-header>
+  <mat-card-content class="pl-[40px]">
+    <p>
+      <strong>Type:</strong> {{ selectedCurrency.value.type.toUpperCase() }}
+    </p>
+    <p><strong>Unit:</strong> {{ selectedCurrency.value.unit }}</p>
+    <p><strong>Value:</strong> {{ selectedCurrency.value.value }}</p>
+  </mat-card-content>
+</mat-card>
+<ng-template #noSelection>
+  <mat-card class="ml-4 mr-4">
+    <mat-card-header>
+      <mat-card-title>No Selection</mat-card-title>
+    </mat-card-header>
+    <mat-card-content></mat-card-content
+  ></mat-card>
+</ng-template>
