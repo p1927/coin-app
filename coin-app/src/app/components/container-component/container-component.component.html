@@ -1,12 +1,12 @@
 <div *ngIf="rates$ | async; let rates">
   <div *ngIf="(rates | keyvalue)?.length" class="p-4 w-100 flex fix-height">
-    <div class="w-50 overflow-y-auto rounded-lg scroll-design">
+    <div class="exchange-rates overflow-y-auto rounded-lg scroll-design">
       <app-exchange-rates
         [rates]="rates"
         (selection)="handleSelection($event)"
       ></app-exchange-rates>
     </div>
-    <div class="w-50 p-20 align-content-center">
+    <div class="currency-selector content-center">
       <app-currency-selector
         [selectedCurrency]="selectedCurrency"
       ></app-currency-selector>

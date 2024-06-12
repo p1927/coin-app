@@ -1,14 +1,11 @@
-<mat-card
-  class="shadow-lg rounded-lg m-4 p-4"
-  *ngIf="selectedCurrency; else noSelection"
->
+<mat-card class="drop-shadow-lg" *ngIf="selectedCurrency; else noSelection">
   <mat-card-header>
     <div mat-card-avatar class="currency-avatar">
       {{ selectedCurrency.key.toUpperCase() }}
     </div>
     <mat-card-title>{{ selectedCurrency.value.name }}</mat-card-title>
   </mat-card-header>
-  <mat-card-content class="pl-[40px]">
+  <mat-card-content class="padding">
     <p>
       <strong>Type:</strong> {{ selectedCurrency.value.type.toUpperCase() }}
     </p>
