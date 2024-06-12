@@ -1,0 +1,9 @@
+<div>
+  <h3>Select Currency</h3>
+  <select (change)="onCurrencyChange($event.target.value)">
+    <option *ngFor="let rate of rates | keyvalue" [value]="rate.key">
+      {{ rate.key }}
+    </option>
+  </select>
+  <p *ngIf="selectedCurrency">Selected Currency: {{ selectedCurrency }}</p>
+</div>
